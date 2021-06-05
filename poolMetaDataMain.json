@@ -2,6 +2,6 @@
   "name": "Cardano ADA Mini Pool Switzerland",
   "description": "A reliable and eco-friendly stake pool running on Raspberry Pi's",
   "ticker": "MINI1",
-  "homepage": "https://www.adaministake.com"
+  "homepage": "https://www.adaministake.com",
   "extended": "https://raw.githubusercontent.com/jterrier84/minipool/main/poolMetaDataMainExt.json"
 }
