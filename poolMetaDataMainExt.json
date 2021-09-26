@@ -1,37 +1,36 @@
 {
-    "info": {
-        "url_png_icon_64x64": "https://raw.githubusercontent.com/jterrier84/minipool/main/Mini1LogoSmall.png",
-        "url_png_logo": "https://github.com/jterrier84/minipool/blob/main/MINI1_logo.png?raw=true",
-        "location": "Weiningen | Zurich | Switzerland",
-        "social": {
-            "twitter_handle": "mini1pool",
-            "telegram_handle": "mini1pool",
-            "facebook_handle": "",
-            "youtube_handle": "",
-            "twitch_handle": "",
-            "discord_handle": "",
-            "github_handle": "jterrier84"
-        },
-        "company": {
-            "name": "Mini Stake Pool",
-            "addr": "",
-            "city": "Weiningen | Zurich | Switzerland",
-            "country": "CH",
-            "company_id": "",
-            "vat_id": ""
-                  },
-        "about": {
-            "me": "Dedicated Cardano pool operator located in Weiningen, Zurich. Always put sustainability first. Big supporter of the Cardano dream and vision.",
-            "server": "The entire pool is running on totally 3 Raspberry Pi's, 1 Core and 2 Relays. The entire power consumption including router is 30 Watt. The electricity comes from 100% hydropower-plants from Switzerland and abroad.",
-            "company": ""
-        },
+  "info": {
+    "url_png_icon_64x64": "https://raw.githubusercontent.com/jterrier84/minipool/main/Mini1LogoSmall.png",
+    "url_png_logo": "https://github.com/jterrier84/minipool/blob/main/MINI1_logo.png?raw=true",
+    "location": "Weiningen | Zurich | Switzerland",
+    "social": {
+      "twitter_handle": "JuL71695233",
+      "telegram_handle": "mini1pool",
+      "facebook_handle": "",
+      "youtube_handle": "",
+      "twitch_handle": "",
+      "discord_handle": "",
+      "github_handle": "jterrier84"
+    },
+    "company": {
+      "name": "Mini Stake Pool",
+      "addr": "",
+      "city": "Weiningen | Zurich | Switzerland",
+      "country": "CH",
+      "company_id": "",
+      "vat_id": ""
+    },
+    "about": {
+      "me": "Dedicated Cardano pool operator located in Weiningen, Zurich. Always put sustainability first. Big supporter of the Cardano dream and vision.",
+      "server": "The entire pool is running on totally 3 Raspberry Pi's, 1 Core and 2 Relays. The entire power consumption including router is 30 Watt. The electricity comes from 100% hydropower-plants from Switzerland and abroad.",
+      "company": ""
+    },
     "my-pool-ids": {
-        "0": "c3e7025ebae638e994c149e5703e82619b31897c9e1d64fc684f81c2",
-        "1": ""
-      },
-         "telegram-admin-handle": {
-        "0": "mini1pool"
+      "0": "c3e7025ebae638e994c149e5703e82619b31897c9e1d64fc684f81c2",
+      "1": ""
+    },
+    "telegram-admin-handle": {
+      "0": "mini1pool"
     }
-    }
-   
+  }
 }
