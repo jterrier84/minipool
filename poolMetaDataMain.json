@@ -1,6 +1,6 @@
 {
-  "name": "Cardano ADA Mini Pool Switzerland",
-  "description": "A reliable and eco-friendly stake pool running on Mac Mini M1 & Raspberry Pi's",
+  "name": "Mini Pool",
+  "description": "A small energy-efficient Cardano Stake Pool running on Mac Mini M1 & Raspberry Pi's located in Switzerland",
   "ticker": "MINI1",
   "homepage": "https://www.adaministake.com",
   "extended": "https://git.io/JGjRk"
