@@ -40,8 +40,9 @@ guide links for the different operating systems.
 Let's clone this repository to your host system first
 
 ```bash
+cd ${HOME}
 sudo git clone https://github.com/jterrier84/minipool.git
-cd Cardano-node-docker
+cd minipool/Cardano-node-docker
 ```  
 
 We will now download the latest official Cardano node configuration files from the IOHK repository and store them on our host system.
@@ -56,13 +57,25 @@ rather than have them stored inside the Docker container. The Docker image will 
 cd node/files
 export NODE_CONFIG="testnet"
 export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') 
-wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-config.json
-wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-byron-genesis.json
-wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-shelley-genesis.json
-wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-alonzo-genesis.json
-wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
+sudo wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-config.json
+sudo wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-byron-genesis.json
+sudo wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-shelley-genesis.json
+sudo wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-alonzo-genesis.json
+sudo wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
 ```
 
+# 3. Build the Cardano node docker container
+
+At this point it's time to build the docker container. The container will include:
+
+1. cardano-node & cardano-cli v1.34.1 - Cardano binaries to run the node (Download compiled binaries from [Armada Alliance GitHub](https://github.com/armada-alliance/cardano-node-binaries)) 
+2. gLiveView - Monitoring tool for the Cardano node
+3. [SchedluedBlocks - Tool to query the scheduled slots for a block productin node. (Credits for this tool goes to [SNAKE POOL](https://github.com/asnakep/ScheduledBlocks))
+
+```bash
+cd /${HOME}/minipool/Cardano-node-docker/dockerfiles
+sudo ./build.sh
+```
 
 
 

@@ -10,8 +10,6 @@ WORKDIR /cardano-node
 
 ##download latest cardano-cli & cardano-node version static build from armada-alliance.com
 RUN wget -O 1_34_1.zip https://github.com/armada-alliance/cardano-node-binaries/blob/main/static-binaries/1_34_1.zip?raw=true \
-##older version of cardano-cli & cardano-node
-##RUN wget https://ci.zw3rk.com/build/430108/download/1/aarch64-unknown-linux-musl-cardano-node-1.33.1.zip \
     && unzip *.zip
 
 ##Install libsodium (needed for ScheduledBlocks.py)
