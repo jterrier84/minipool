@@ -86,9 +86,11 @@ docker images
 
 You should see your Cardano node docker image in the list, e.g.
 
-`REPOSITORY              TAG            IMAGE ID       CREATED          SIZE
+```bash
+REPOSITORY              TAG            IMAGE ID       CREATED          SIZE
 armada/armada-cn        1.34.1         da4414775ce6   37 seconds ago   619MB
-<none>                  <none>         f3891eef21e4   3 minutes ago    1.09GB`
+<none>                  <none>         f3891eef21e4   3 minutes ago    1.09GB
+```
 
 All we need is the "armada/armada-cn" image. You can delete the others in the list to free up space on your harddrive, e.g.
 
