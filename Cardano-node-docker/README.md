@@ -64,17 +64,51 @@ sudo wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CON
 sudo wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
 ```
 
-# 3. Build the Cardano node docker container
+# 3. Build the Cardano node docker image
 
-At this point it's time to build the docker container. The container will include:
+At this point it's time to build the docker image. The image will include:
 
 1. cardano-node & cardano-cli v1.34.1 - Cardano binaries to run the node (Download compiled binaries from [Armada Alliance GitHub](https://github.com/armada-alliance/cardano-node-binaries)) 
 2. gLiveView - Monitoring tool for the Cardano node
-3. [SchedluedBlocks - Tool to query the scheduled slots for a block productin node. (Credits for this tool goes to [SNAKE POOL](https://github.com/asnakep/ScheduledBlocks))
+3. SchedluedBlocks - Tool to query the scheduled slots for a block production node. (Credits for this tool goes to [SNAKE POOL](https://github.com/asnakep/ScheduledBlocks))
 
 ```bash
-cd /${HOME}/minipool/Cardano-node-docker/dockerfiles
+cd ${HOME}/minipool/Cardano-node-docker/dockerfiles
 sudo ./build.sh
+```
+The entire building process might take some minutes.
+
+Once the process is done, you can use the command to see the list of all Docker images:
+
+```bash
+docker images
+```
+
+You should see your Cardano node docker image in the list, e.g.
+
+`REPOSITORY              TAG            IMAGE ID       CREATED          SIZE
+armada/armada-cn        1.34.1         da4414775ce6   37 seconds ago   619MB
+<none>                  <none>         f3891eef21e4   3 minutes ago    1.09GB`
+
+All we need is the "armada/armada-cn" image. You can delete the others in the list to free up space on your harddrive, e.g.
+
+```bash
+docker rmi f3891eef21e4 
+```
+
+# 4. Start node
+
+You can now simply start the node with:
+
+```bash
+cd ${HOME}/minipool/Cardano-node-docker/node
+sudo ./run-node.sh
+```
+
+Check the status of the running docker container with:
+
+```bash
+docker ps -a
 ```
 
 
