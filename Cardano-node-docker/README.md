@@ -3,7 +3,7 @@
 In this project you will find the files to build a docker image containing all the needed files to run a Cardano full node.
 The docker image can run on any arm64 device (such as a RaspberryPi, Mac Mini M1, etc.). It can be configured as a relay or bock production node.
 
-If you are enjoying the content of this project, please consider supporting me by delegating to my stake pool, ticker MINI1 or
+If you are enjoying the content of this project, please consider supporting me by delegating to my stake pool, ticker [MINI1](https://www.adaministake.com) or
 donating ₳D₳ to: addr1qygv5fqsfjhfgkx7fhkkegxksx56dsu262vhaxr4mvuukt8uqh7nhjs3pcl98xr2zhmtqk6qkmr4gszxjrs3lnpedqdqyr3jzc
 
 ## Why using docker image to run a Cardano node?
@@ -31,11 +31,45 @@ This guide describes how to optimize the Hardware to satisfy the above listed sy
 The installation of Docker varies from operating system to operating system. For this reason, I share some helpful and good installation 
 guide links for the different operating systems.
 
-[Install Docker on Linux (Ubuntu)](https://github.com/speedwing/cardano-staking-pool-edu/blob/master/DOCKER.md)
-[Install Docker on MacOs](https://docs.docker.com/desktop/mac/install/)
-[Install Docker on Windows](https://docs.docker.com/desktop/windows/install/)
+* [Install Docker on Linux (Ubuntu)](https://github.com/speedwing/cardano-staking-pool-edu/blob/master/DOCKER.md)
+* [Install Docker on MacOs](https://docs.docker.com/desktop/mac/install/)
+* [Install Docker on Windows](https://docs.docker.com/desktop/windows/install/)
 
-# 2. 
+# 2. Download repository and Cardano node configuration files
+
+Let's clone this repository to your host system first
+
+```bash
+sudo git clone https://github.com/jterrier84/minipool.git
+cd Cardano-node-docker
+```  
+
+We will now download the latest official Cardano node configuration files from the IOHK repository and store them on our host system.
+
+For the sake of this tutorial we will download and set up the configuration files for the Cardano testnet. If you need the files for the mainnet
+just replace "testnet" with "mainnet" here below.
+ 
+Note: As the configuration files might require modifications over time, it is way more practical to have them stored on the host, 
+rather than have them stored inside the Docker container. The Docker image will then access to these files via file sharing.
+
+```bash
+cd node/files
+export NODE_CONFIG="testnet"
+export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') 
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-config.json
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-byron-genesis.json
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-shelley-genesis.json
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-alonzo-genesis.json
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
+```
+
+
+
+
+
+
+
+
 
 
 
